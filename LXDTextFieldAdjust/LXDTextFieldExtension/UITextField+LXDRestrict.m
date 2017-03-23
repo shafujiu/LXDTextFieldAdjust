@@ -56,6 +56,10 @@ static void * LXDMaxTextLengthKey = &LXDMaxTextLengthKey;
         maxTextLength = NSUIntegerMax;
     }
     objc_setAssociatedObject(self, LXDMaxTextLengthKey, @(maxTextLength), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    if (self.textRestrict) {
+        [self setTextRestrict:self.textRestrict];
+    }
 }
 
 @end
